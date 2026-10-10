@@ -5,6 +5,8 @@ import (
 	"testing"
 )
 
+// TestWingetParseTextOutputContinuousSeparator verifies that WinGet
+// packages are parsed when the table uses a continuous dash separator.
 func TestWingetParseTextOutputContinuousSeparator(t *testing.T) {
 	header := fmt.Sprintf("%-35s%-30s%-16s%-12s%s",
 		"Name", "Id", "Version", "Available", "Source")

@@ -112,6 +112,9 @@ func (w *Winget) parseText() ([]model.Package, error) {
 //	--------------------  --------------------  ---------  ---------  ------
 //	Git                   Git.Git               2.44.0     2.45.0     winget
 
+// parseTextOutput parses installed packages from WinGet's text table.
+// It falls back to header-based column positions when the separator
+// does not provide enough column boundaries.
 func (w *Winget) parseTextOutput(s string) []model.Package {
 	var colStarts []int
 	var pkgs []model.Package
